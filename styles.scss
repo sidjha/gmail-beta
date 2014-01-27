@@ -1,0 +1,292 @@
+// styles
+
+body {
+	font-family: 'Arial', sans-serif;	
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a, a:visited {
+	color: rgb(21,38,180);
+}
+
+.user_panel {
+	height: 25px;
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	width: 50%;
+	min-width: 500px;
+}
+
+.top_nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: 0.9em;
+	li {
+		display: inline-block;
+		text-align: center;
+	}
+}
+
+.top {
+	height: 100px;
+	white-space: nowrap;
+}
+
+$left-width: 12%;
+$middle-width: 70%;
+$left-minwidth: 150px;
+$middle-minwidth: 800px;
+
+.masthead {
+	vertical-align: top;
+	width: 200px;
+	height: 60px;
+	min-width: $left-minwidth;
+	display: inline-block;
+	img {
+		width: 160px;
+		//background: url('http://www.techshout.com/images/gmail-logo-1.jpg');
+	}
+}
+
+.search {
+	display: inline-block;
+	width: $middle-width;
+	height: 80px;
+	display: inline-block;
+	min-width: $middle-minwidth;
+
+	.fields {
+		display: block;
+		position: relative;
+		top: 50%;
+
+		input {
+			display: inline-block;
+		}
+
+		input[type="text"] {
+			width: 200px;
+			height: 20px;
+		}
+
+		input[type="button"] {
+			font-size: 1.2em;
+			height: 20px;
+		}
+
+		.search_links {
+			font-size: 0.8em;
+			display: block;
+			position: relative;
+			top: 5px;
+		}
+	}
+
+}
+
+
+.toolbar {
+	height: 30px;
+	.fields {
+		width: 100%;
+		button {
+			display: inline-block;
+			width: 100px;
+		}
+		button.archive {
+			font-weight: bold;
+		}
+
+		.count {
+			float: right;
+			font-size: 0.9em;
+			padding: 2px 5px 0 0;
+		}
+		.refresh {
+			font-size: 0.8em;
+		}
+	}
+
+	.selectors {
+		margin: 5px 0;
+
+		font-size: 0.9em;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.toolbar-bottom {
+
+}
+
+
+.main {
+	width: 100%;
+	white-space: nowrap;
+	margin-top: 10px;
+}
+
+.left {
+	display: inline-block;
+	width: $left-width;
+	min-width: $left-minwidth;
+
+	.nav {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		li {
+			padding: 1% 4%;
+			border-radius: 4px;
+			font-size: 0.95em;
+
+		}
+		li.active {
+			background: rgb(191,212,238);
+			font-weight: bold;
+		}
+
+		li.compose {
+			padding-bottom: 10px;
+			font-weight: bold;
+		}
+	}
+}
+
+.middle {
+	display: inline-block;
+	width: $middle-width;
+	min-width: $middle-minwidth;
+	
+	background-color: rgb(191,212,238);
+	border-radius: 5px;
+
+	vertical-align: top;
+
+	margin-left: -10px;
+	padding: 0.1% 0 1% 0.5%;
+
+}
+
+.emails {
+	list-style: none;
+	margin: 2% 0 0 0;
+	padding: 0;
+	li {
+		background: rgb(234,237,244);
+		height: 25px;
+		font-size: 0.9em;
+		padding: 2px 10px;
+		border-bottom: 1px solid #ccc;
+
+		.check {
+			display: inline-block;
+			vertical-align: top;
+			width: 16px;
+			height: 16px;
+		}
+
+		.star {
+			background-image: url('/static/img/starred.png');
+			width: 16px;
+			height: 16px;
+			background-repeat: no-repeat;
+			vertical-align: top;
+			position: relative;
+			top: 1px;
+		}
+
+		.star_unread {
+			background-image: url('/static/img/starred_unread.png');
+		}
+
+		div {
+			vertical-align: top;
+			display: inline-block;
+			padding-top: 1px;
+		}
+
+		div.sender {
+			width: 100px;
+		}
+
+		div.subject {
+			margin-left: 20%;
+		}
+
+		div.snippet {
+			color: #666;
+			max-width: 55%;
+			overflow: hidden;
+		}
+
+		div.subject_area {
+			width: 550px;
+			
+			overflow: hidden;
+		}
+
+		div.timestamp {
+			float: right;
+		}
+
+
+	}
+
+	.unread_email {
+		background-color: #fff;
+	}
+}
+
+.unread {
+	font-weight: bold;
+}
+
+.labels {
+	display: none;
+	width: 90%;
+	margin: 10px 0 0 0;
+	padding: 0 0 2% 0;
+	list-style: none;
+	border: 3px solid #9bf7b8;
+	border-radius: 5px;
+
+	h4 {
+		margin: 0;
+		padding: 0;
+		background: #9bf7b8;
+		font-size: 0.9em;
+		font-weight: 300;
+
+		i {
+			display: inline-block;
+			background-image: url('/static/img/arrow.png');
+			width: 14px;
+			height: 14px;
+			margin-right: 5px;
+		}
+	}
+	li {
+		padding: 0 2% 0 2%;
+	}
+	li a {
+		font-size: 0.8em;
+		color: #1d5b47;
+		&:visited {
+			color: #1d5b47;
+		}
+	}
+
+	.edit_label {
+		text-align: right;
+	}
+}

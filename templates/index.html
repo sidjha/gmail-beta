@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="/static/css/styles.css" rel="stylesheet">
+	<title>Old GMail</title>
+</head>
+
+<body>
+	<header>
+		<div class="user_panel">
+			<ul class="top_nav">
+				<li class="email"><b>sid@gmail.com</b> | </li>
+				<li><a href="#">Report bug</a> | </li>
+				<li><a href="#">Contacts</a> | </li>
+				<li><a href="#">Settings</a> | </li>
+				<li><a href="#">Help</a> | </li>
+				<li><a href="#">Sign out</a></li>
+			</ul>
+		</div>
+		<div class="top">
+			<div class="masthead">
+				<img src="http://www.techshout.com/images/gmail-logo-1.jpg">
+			</div>
+			<div class="search">
+				<div class="fields">
+					<input type="text" class="searchbox">
+					<input type="button" value="Search Mail">
+					<input type="button" value="Search the web">
+					<div class="search_links">
+					<a href="#">Show search options</a>
+					<a href="#">Create a filter</a>
+				</div>
+				</div>
+
+			</div>
+		</div>
+	</header>
+	<div class="main">
+		<div class="left">
+			<ul class="nav">
+				<li class="compose"><a href="#">Compose Mail</a></li>
+				<li class="active"><a href="#">Inbox</a></li>
+				<li><a href="#">Starred</a></li>
+				<li><a href="#">Sent Mail</a></li>
+				<li><a href="#">All Mail</a></li>
+				<li><a href="#">Spam</a></li>
+				<li><a href="#">Trash</a></li>
+			</ul>
+
+			<ul class="labels">
+				<h4><i></i>Labels</h4>
+				<li><a href="#" class="unread">acquisitions (2) </a></li>
+				<li><a href="#" class="unread">vision (1) </a></li>
+				<li><a href="#">important</a></li>
+				<li><a href="#">links</a></li>
+				<li class="edit_label"><a href="#">Edit Labels</a></li>
+			</ul>
+		</div>
+		<div class="middle">
+			<div class="toolbar">
+				<div class="fields">
+					<button class="archive">Archive</button>
+					<button>Report Spam</button>
+					<a href="#" class="refresh">Refresh</a>
+					<div class="count"><b>1 - 11</b> of <b>11</b></div>
+				</div>
+				<div class="selectors">
+					Select: 
+					<a href="#">All</a>, 
+					<a href="#">Read</a>, 
+					<a href="#">Unread</a>, 
+					<a href="#">Starred</a>, 
+					<a href="#">Unstarred</a>, 
+					<a href="#">None</a>
+				</div>
+			</div>
+			<ul class="emails">
+				{% for email in emails %}
+				<li {% if email.isActive %}class="unread_email"{%endif%}>
+					<input type="checkbox" class="check">
+					<div class="star {% if email.isActive %}star_unread{%endif%}"></div>
+					<div class="sender {% if email.isActive %}unread{%endif%}">me, {{email.name}}</div>
+					<div class="subject_area">
+						<div class="subject {% if email.isActive %}unread{%endif%}">{{email.subject}}</div>
+						<div class="dash">-</div>
+						<div class="snippet">{{email.email_content}}</div>
+					
+						<div class="ellipses">...</div>
+					</div>
+					<div class="timestamp {% if email.isActive %}unread{%endif%}">{{email.timestamp}} am</div>
+				</li>
+				{%endfor%}
+			</ul>
+			<div class="toolbar toolbar-bottom">
+				<div class="selectors">
+					Select: 
+					<a href="#">All</a>, 
+					<a href="#">Read</a>, 
+					<a href="#">Unread</a>, 
+					<a href="#">Starred</a>, 
+					<a href="#">Unstarred</a>, 
+					<a href="#">None</a>
+				</div>
+				<div class="fields">
+					<button class="archive">Archive</button>
+					<button>Report Spam</button>
+					<a href="#" class="refresh">Refresh</a>
+					<div class="count"><b>1 - 11</b> of <b>11</b></div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

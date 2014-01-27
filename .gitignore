@@ -1,0 +1,4 @@
+*.pyc
+.sass-cache/
+.DS_Store
+
