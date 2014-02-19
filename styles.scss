@@ -48,10 +48,12 @@ $middle-minwidth: 800px;
 	height: 60px;
 	min-width: $left-minwidth;
 	display: inline-block;
-	img {
+	a > img {
 		width: 160px;
 		//background: url('http://www.techshout.com/images/gmail-logo-1.jpg');
 	}
+
+
 }
 
 .search {
@@ -196,17 +198,18 @@ $middle-minwidth: 800px;
 		}
 
 		.star {
-			background-image: url('/static/img/starred.png');
+			background-image: url('/static/img/unstarred.png');
 			width: 16px;
 			height: 16px;
 			background-repeat: no-repeat;
 			vertical-align: top;
 			position: relative;
 			top: 1px;
+			cursor: pointer;
 		}
 
 		.star_unread {
-			background-image: url('/static/img/starred_unread.png');
+			background-image: url('/static/img/unstarred_unread.png');
 		}
 
 		div {

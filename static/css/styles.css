@@ -34,7 +34,7 @@ a, a:visited {
   height: 60px;
   min-width: 150px;
   display: inline-block; }
-  .masthead img {
+  .masthead a > img {
     width: 160px; }
 
 .search {
@@ -132,15 +132,16 @@ a, a:visited {
       width: 16px;
       height: 16px; }
     .emails li .star {
-      background-image: url("/static/img/starred.png");
+      background-image: url("/static/img/unstarred.png");
       width: 16px;
       height: 16px;
       background-repeat: no-repeat;
       vertical-align: top;
       position: relative;
-      top: 1px; }
+      top: 1px;
+      cursor: pointer; }
     .emails li .star_unread {
-      background-image: url("/static/img/starred_unread.png"); }
+      background-image: url("/static/img/unstarred_unread.png"); }
     .emails li div {
       vertical-align: top;
       display: inline-block;

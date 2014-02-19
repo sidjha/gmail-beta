@@ -2,14 +2,15 @@
 <html>
 <head>
 	<link href="/static/css/styles.css" rel="stylesheet">
-	<title>Old GMail</title>
+	<title>Old GMail by @sidjha</title>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 </head>
 
 <body>
 	<header>
 		<div class="user_panel">
 			<ul class="top_nav">
-				<li class="email"><b>sid@gmail.com</b> | </li>
+				<li class="email"><b>tester@gmail.com</b> | </li>
 				<li><a href="#">Report bug</a> | </li>
 				<li><a href="#">Contacts</a> | </li>
 				<li><a href="#">Settings</a> | </li>
@@ -19,7 +20,7 @@
 		</div>
 		<div class="top">
 			<div class="masthead">
-				<img src="http://www.techshout.com/images/gmail-logo-1.jpg">
+				<a href="/"><img src="http://www.techshout.com/images/gmail-logo-1.jpg"></a>
 			</div>
 			<div class="search">
 				<div class="fields">
@@ -39,7 +40,7 @@
 		<div class="left">
 			<ul class="nav">
 				<li class="compose"><a href="#">Compose Mail</a></li>
-				<li class="active"><a href="/">Inbox</a></li>
+				<li class="active"><a href="/">Inbox (4)</a></li>
 				<li><a href="#">Starred</a></li>
 				<li><a href="#">Sent Mail</a></li>
 				<li><a href="/more">All Mail</a></li>
@@ -66,12 +67,12 @@
 				</div>
 				<div class="selectors">
 					Select: 
-					<a href="#">All</a>, 
+					<a href="#" class="all">All</a>, 
 					<a href="#">Read</a>, 
 					<a href="#">Unread</a>, 
 					<a href="#">Starred</a>, 
 					<a href="#">Unstarred</a>, 
-					<a href="#">None</a>
+					<a href="#" class="none">None</a>
 				</div>
 			</div>
 			<ul class="emails">
@@ -94,12 +95,12 @@
 			<div class="toolbar toolbar-bottom">
 				<div class="selectors">
 					Select: 
-					<a href="#">All</a>, 
+					<a href="#" class="all">All</a>, 
 					<a href="#">Read</a>, 
 					<a href="#">Unread</a>, 
 					<a href="#">Starred</a>, 
 					<a href="#">Unstarred</a>, 
-					<a href="#">None</a>
+					<a href="#" class="none">None</a>
 				</div>
 				<div class="fields">
 					<button class="archive">Archive</button>
@@ -111,6 +112,34 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+
+	$('.star').on("click", function() {
+		if ($(this).css('background-image') === "url(http://localhost:5000/static/img/unstarred.png)") {
+			$(this).css('background-image', "url(http://localhost:5000/static/img/starred.png)");
+		} 
+		else if ($(this).css('background-image') === "url(http://localhost:5000/static/img/unstarred_unread.png)") {
+			$(this).css('background-image', "url(http://localhost:5000/static/img/starred_unread.png)");
+		} 
+		else if ($(this).css('background-image') === "url(http://localhost:5000/static/img/starred_unread.png)") {
+			$(this).css('background-image', "url(http://localhost:5000/static/img/unstarred_unread.png)");
+		} 
+		else {
+			$(this).css('background-image', "url(http://localhost:5000/static/img/unstarred.png)");
+		}
+	});
+
+	$('.all').on("click", function() {
+		$('.check').prop("checked", true);
+		return false;
+	});
+
+	$('.none').on("click", function() {
+		$('.check').prop("checked", false);
+		return false;
+	});
+
+	</script>
 </body>
 
 </html>
